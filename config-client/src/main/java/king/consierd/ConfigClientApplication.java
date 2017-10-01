@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * config client 从服务配置中心 config server 获取配置信息
+ * config server 从远程仓库获取配置信息
  * 	 pom:	spring-cloud-starter-config
  * 	 		spring-boot-starter-web
  *   yml:	配置 config server 请求路径和配置信息文件名
@@ -23,8 +24,11 @@ public class ConfigClientApplication {
 	@Value("${foo}")
 	String value;
 
+	@Value("${foo2}")
+	String value2;
+
 	@RequestMapping("/hi")
 	public String getConfig() {
-		return value;
+		return value + value2;
 	}
 }
