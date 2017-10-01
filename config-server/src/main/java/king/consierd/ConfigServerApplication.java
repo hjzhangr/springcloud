@@ -11,13 +11,20 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * 它支持配置服务放在配置服务的内存中（即本地），也支持放在远程Git仓库中。
  * 在spring cloud config 组件中，分两个角色，一是config server，二是config client。
  *
- * 分布式配置中心 config server, 从远程仓库获取配置信息
- * 	 pom:	spring-cloud-config-server
- * 	 anno:	@EnableConfigServer
- * 	 prop:	配置资源路径等信息
+ * -- 分布式配置中心 config server, 从远程仓库获取配置信息
+ * 	 	pom:	spring-cloud-config-server
+ * 	 	anno:	@EnableConfigServer
+ * 	 	prop:	配置资源路径等信息
+ *
+ *
+ * -- 将配置中心做成一个微服务, 将其集群化, 从而达到高可用
+ * 		pom:	spring-cloud-starter-eureka
+ * 		anno:	@EnableEurekaClient
+ * 		yml:	指定服务注册地址
  */
 @SpringBootApplication
 @EnableConfigServer
+@EnableEurekaClient
 public class ConfigServerApplication {
 
 	public static void main(String[] args) {
