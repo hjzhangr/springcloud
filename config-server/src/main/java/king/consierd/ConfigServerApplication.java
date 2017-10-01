@@ -3,6 +3,7 @@ package king.consierd;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.config.server.EnableConfigServer;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * 在分布式系统中，由于服务数量巨多，为了方便服务配置文件统一管理，实时更新，
@@ -12,7 +13,6 @@ import org.springframework.cloud.config.server.EnableConfigServer;
  *
  * 分布式配置中心 config server
  * 	 pom:	spring-cloud-config-server
- * 	 		spring-cloud-starter-eureka
  * 	 anno:	@EnableConfigServer
  * 	 prop:	配置资源路径等信息
  */

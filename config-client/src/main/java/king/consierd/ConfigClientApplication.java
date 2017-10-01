@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  * config client 从服务配置中心 config server 获取配置信息
  * 	 pom:	spring-cloud-starter-config
  * 	 		spring-boot-starter-web
- *   prop:	配置 config server 信息
+ *   yml:	配置 config server 请求路径和配置信息文件名
  */
 @SpringBootApplication
 @RestController
@@ -20,7 +20,7 @@ public class ConfigClientApplication {
 		SpringApplication.run(ConfigClientApplication.class, args);
 	}
 
-	@Value("${server.port}")
+	@Value("${foo}")
 	String value;
 
 	@RequestMapping("/hi")
